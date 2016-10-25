@@ -67,14 +67,6 @@ div.zdjecie {
   color: #BBB;
 }
 
-.powrot {
-  display: inline-block;
-  float: left;
-  font-size: 1em;
-  border-color: #CCC;
-
-}
-
 .ramkaZdjecia {
   padding: 5px;
   background-color: #555;
@@ -91,5 +83,38 @@ div.zdjecie {
   overflow:auto;
   display: block;
 }
+
+.guzik {
+  overflow: auto;
+  display: inline-block;
+  width: 33.3333%;
+}
+
+#guziki {
+  display: none;
+  width: 100%;  
+  padding: 3px;
+  margin: auto;
+}
+
+#prev {
+  float: left;
+  font-size: 1.5em; 
+}
+
+#next {
+  float: right; 
+  font-size: 1.5em; 
+}
+
+#powrot, #powrot2 {
+  width: 80%;
+  font-size: 1.5em; 
+}
+
+#powrot3 {
+  font-size: 1.5em; 
+}
+
 
 
