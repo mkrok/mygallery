@@ -53,7 +53,7 @@ function pokazZdjecia() {
     zdjeciaHtml += '<div class="zdjecie">' + 
                    '<a href="#bigSize" class="fullsize" id="/' + 
                     galeria[index].folder + '/' + galeria[index].zdjecia[i] + 
-                   '" indeks="' + i + '"s folder="' + index + '">' + 
+                   '" indeks="' + i + '" folder="' + index + '">' + 
                    '<img alt="thumbnail" width="300" height="200" class="fit center" src="' +
                    '/' + galeria[index].folder + '/' + galeria[index].zdjecia[i] +
                    '"></a></div>';
