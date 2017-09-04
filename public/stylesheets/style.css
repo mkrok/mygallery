@@ -15,7 +15,7 @@
 
 
 #galleries, #photographs, #bigSize {
-  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif; 
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: #AAA;
   background-color: #333;
   /*min-height: 2000px;*/
@@ -80,7 +80,7 @@ div.zdjecie {
 }
 
 #zdjecia, #duzeZdjecieDiv {
-  overflow:auto;
+  overflow: auto;
   display: block;
 }
 
@@ -92,29 +92,26 @@ div.zdjecie {
 
 #guziki {
   display: none;
-  width: 100%;  
+  width: 100%;
   padding: 3px;
   margin: auto;
 }
 
 #prev {
   float: left;
-  font-size: 1.5em; 
+  font-size: 1.5em;
 }
 
 #next {
-  float: right; 
-  font-size: 1.5em; 
+  float: right;
+  font-size: 1.5em;
 }
 
 #powrot, #powrot2 {
   width: 80%;
-  font-size: 1.5em; 
+  font-size: 1.5em;
 }
 
 #powrot3 {
-  font-size: 1.5em; 
+  font-size: 1.5em;
 }
-
-
-
