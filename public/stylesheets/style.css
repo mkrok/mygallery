@@ -54,7 +54,7 @@ body {
     padding: 0;
     padding-top: 50px;
     background-color: #333;
-    color: #aaa;
+    color: white;
     font-family: "Open Sans",arial,sans-serif;
 }
 
@@ -73,7 +73,7 @@ body {
   padding: 0;
   position: fixed;
   top: 0;
-  background-color: black;
+  background-color: #555;
   height: 50px;
   width: 100%;
   text-align: center;
@@ -90,12 +90,12 @@ body {
   bottom: 0;
   height: 50px;
   width: 100%;
-  background-color: black;
-  border: 1px;
+  background-color: #555;
+  border: 0px;
   border-top-style: solid;
   border-color: white;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 #tytul, #footer {
@@ -164,10 +164,11 @@ body {
   display: block;
 }
 
-#zdjecia {
+#zdjecia, #listaGalerii {
     width: 90%;
     margin: auto;
 }
+
 .guziki {
   overflow: auto;
   display: inline-block;
@@ -191,7 +192,13 @@ body {
 }
 
 
-#powrot, #powrot2 {
-  width: 80%;
-  font-size: 1.5em;
+#powrot {
+    margin: 5px;
+    margin-right: 50px;
+    width: 60px;
+    float: right;
+    color: white;
+    background-color: #555;
+    height: 40px;
+    font: 0.8em;
 }

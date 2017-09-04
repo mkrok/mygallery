@@ -2,7 +2,7 @@ doctype html
 html
   head
     title= tytul
-    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" )
     link(rel="stylesheet" href="stylesheets/font-awesome.min.css")
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/jquery.mobile.structure-1.4.5.min.css')
@@ -18,26 +18,16 @@ html
   body
     #naglowek
         #tytul= tytul
+        button#powrot(style='display: none;')
+            i.fa.fa-reply
     #galleries
         #listaGalerii
     #photographs(style='display: none;')
-        #photosDiv
-          br
-          h1#tytulGalerii Please choose a gallery
-          br
-          br
         #zdjecia
         br
-        button#powrot(href="#galleries")
-          i.fa.fa-arrow-up
     #bigSize(style='display: none;')
         #duzeZdjecieDiv
-            br
-            h1#tytulZdjecia Please choose a gallery
         #bigPic
-        br
-        button.center#powrot2(href="#galleries")
-          i.fa.fa-arrow-up
         #guziki
             button.center(id="prev")
                 i.fa.fa-arrow-left

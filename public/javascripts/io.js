@@ -2,6 +2,7 @@ var socket = io();
 var galeria = [];
 var folderIndex;
 var photoIndex;
+var nazwa = 'my galleries';
 
 $(window).on( "load", function () {
   setTimeout( function() {
@@ -16,18 +17,36 @@ $(window).on( "load", function () {
   $('#prev').on('click', { value: -1}, pokazFullSizePrev);
   $('#bigPic').on('swipeleft', pokazFullSizeNext);
   $('#bigPic').on('swiperight', pokazFullSizePrev);
-
+  $('#powrot3').on('click', () => {
+      $('#galleries').css('display','inline-block');
+      $('#photographs').css('display','none');
+      $('#bigSize').css('display','none');
+      $('#naglowek').css('display','block');
+      $('#stopka').css('display','block');
+      $('#tytul').html(nazwa);
+  });
+  $('#powrot').on('click', () => {
+      $('#powrot').css('display','none');
+      $('#galleries').css('display','inline-block');
+      $('#photographs').css('display','none');
+      $('#bigSize').css('display','none');
+      $('#naglowek').css('display','block');
+      $('#stopka').css('display','block');
+      $('#tytul').html(nazwa);
+  });
 });
 
 socket.on('connect', function() {
   socket.emit('hello');
 });
 
-socket.on('test', function(data) {
-  console.log(data);
+socket.on('tytul', function(data) {
+    nazwa = data;
+    console.log('received a title');
 });
 
 socket.on('galeria', function(gallery) {
+  console.log('received a gallery');
   galeria = gallery;
   console.log(galeria);
   wyswietlGalerie(galeria);
@@ -49,8 +68,9 @@ function pokazZdjecia() {
   var index = $(this).attr('rel') || 0;
   var zdjeciaHtml = '';
   //console.log('funkcja pokazZdjecia(), zmienna "index": ' + index);
-  $('#galleries').css('display','none');
-  $('#photographs').css('display','inline-block');
+  $('#galleries').css('display', 'none');
+  $('#photographs').css('display', 'inline-block');
+  $('#powrot').css('display', 'block');
   $('#zdjecia').html('');
   $('#photosDiv').html('');
   $('#photographsHeader').html('');

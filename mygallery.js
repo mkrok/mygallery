@@ -10,6 +10,7 @@ galeria = [];  // global variable
 var foldery = [];
 const rootFolder = config.rootFolder || path.join(__dirname, 'public/photo');
 const port = process.env.PORT || '3001';
+const tytul = config.tytul || 'my galleries';
 
 http.listen(port, () => {
   console.log('server listening on port ' + port);
@@ -43,8 +44,8 @@ function budujGalerie(folder, callback) {
               fs.stat(folder + '/' + katalog + '/' + plik, function(err, stats){
                 if ( stats.isFile() && path.extname(plik).toLowerCase()==='.jpg') {
                   this[katalog+'-zdjecia'].push(plik);
-                  //console.log(Date() + 'dodaję zdjęcie ' + plik +
-                  //             ' do folderu ' + katalog);
+                    //console.log(Date() + 'dodaję zdjęcie ' + plik +
+                    //             ' do folderu ' + katalog);
                 };
               });
             });
@@ -54,11 +55,9 @@ function budujGalerie(folder, callback) {
       });
     });
   });
-
   setTimeout( function() {
     if (callback) callback();
   }, 1000);
-
 };
 
 io.sockets.on('connection', (socket) => {
@@ -66,8 +65,8 @@ io.sockets.on('connection', (socket) => {
   socket.on('hello', () => {
     console.log(socket.handshake.address.substr(7) + ' has connected on: ' + Date());
     budujGalerie(rootFolder, () => {
-      //console.log(galeria[0].zdjecia);
-      socket.emit('galeria', galeria);
+        socket.emit('tytul', tytul);
+        socket.emit('galeria', galeria);
     });
   });
 
