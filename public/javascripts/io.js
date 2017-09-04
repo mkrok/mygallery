@@ -49,16 +49,18 @@ function pokazZdjecia() {
   var index = $(this).attr('rel') || 0;
   var zdjeciaHtml = '';
   //console.log('funkcja pokazZdjecia(), zmienna "index": ' + index);
+  $('#galleries').css('display','none');
+  $('#photographs').css('display','inline-block');
   $('#zdjecia').html('');
   $('#photosDiv').html('');
   $('#photographsHeader').html('');
-  $('#photographsHeader').html(galeria[index].folder);
+  $('#tytul').html(galeria[index].folder);
   for (var i=0; i < (galeria[index].zdjecia).length; i++) {
     zdjeciaHtml += '<div class="zdjecie">' +
                    '<a href="#bigSize" class="fullsize" id="/' +
                     galeria[index].folder + '/' + galeria[index].zdjecia[i] +
                    '" indeks="' + i + '" folder="' + index + '">' +
-                   '<img alt="thumbnail" width="300" height="200" class="fit center" src="' +
+                   '<img alt="thumbnail" width="120" height="80" class="fit center" src="' +
                    '/' + galeria[index].folder + '/' + galeria[index].zdjecia[i] +
                    '"></a></div>';
   };
@@ -71,8 +73,12 @@ function pokazFullSize(){
   folderIndex = $(this).attr('folder');
   photoIndex = indeks;
   //console.log('funkcja pokazFullSize(), zmienna "zdjecie": ' + zdjecie);
+  $('#photographs').css('display','none');
+  $('#naglowek').css('display','none');
+  $('#stopka').css('display','none');
+  $('#bigSize').css('display','block');
   $('#powrot2').css('display','none');
-  $('#guziki').css('display','inline-block');
+  $('#guziki').css('display','block');
   $('#duzeZdjecieDiv').html('');
   $('#bigPic').html('<img alt="zdjęcie" class="photo fit center" src="' +
                     zdjecie + '">'
@@ -88,7 +94,7 @@ function pokazFullSizeNext(){
   var zdjecie = '/' + galeria[folderIndex].folder + '/' +
                 galeria[folderIndex].zdjecia[photoIndex];
   $('#powrot2').css('display','none');
-  $('#guziki').css('display','inline-block');
+  $('#guziki').css('display','block');
   $('#duzeZdjecieDiv').html('');
   $('#bigPic').html('<img alt="zdjęcie" class="photo fit center" src="' +
                     zdjecie + '">'
@@ -104,7 +110,7 @@ function pokazFullSizePrev(){
   var zdjecie = '/' + galeria[folderIndex].folder + '/' +
                 galeria[folderIndex].zdjecia[photoIndex];
   $('#powrot2').css('display','none');
-  $('#guziki').css('display','inline-block');
+  $('#guziki').css('display','block');
   $('#duzeZdjecieDiv').html('');
   $('#bigPic').html('<img alt="zdjęcie" class="photo fit center" src="' +
                     zdjecie + '">'
